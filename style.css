@@ -68,7 +68,7 @@ nav {
     display: inline;
     font-family: "Poppins", sans-serif;
     font-weight: 600;
-    font-size: clamp(.9rem, 6vw, 1.9rem);
+    font-size: clamp(.9rem, 7vw, 1.9rem);
 }
 
 .nav-links {
@@ -210,21 +210,21 @@ nav {
 
 @keyframes slide-in {
   from {
-    transform: translateX(0%);
+    transform: translateX(100%);
   }
 
   to {
-    transform: translateX(100%);
+    transform: translateX(0%);
   }
 }
 
 @keyframes slide-down {
   from {
-    transform: translateY(100%) translateX(100%);
+    transform: translateY(100%);
   }
 
   to {
-    transform: translateY(0%) translateX(0%);
+    transform: translateY(0%);
   }
 }
 
