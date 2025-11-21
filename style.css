@@ -3,7 +3,7 @@
 --indigo: hsl(284.1, 100%, 60.8%);
 --sunglow: rgb(204, 142, 8);
 --honeydew: hsla(105, 67%, 96%, 1);
---dark: rgba(11 , 11 , 10 , .98);
+--dark: rgb(31, 31, 31);
 }
 
 *,
@@ -132,7 +132,7 @@ nav {
     height: 100vh;
     overflow-x: hidden;
     animation: slide-in 0.4s;
-    background-color: rgba(45, 45, 43, 0.99);
+    background-color: var(--dark);
 }
 
 .services-wrapper{
