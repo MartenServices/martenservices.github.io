@@ -204,6 +204,25 @@ nav {
     font-size: 1.2rem;
 }
 
+.hero-section {
+    width: 100%;
+    margin: 0 auto;
+    max-height: 40vh;
+    text-align: center;
+    background-image: url(./assets/bannerpic.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    aspect-ratio: 1 / 1;    
+}
+
+.hero-content {
+    color: var(--honeydew);
+    padding-top: 2rem;
+    background-color: rgb( 31, 31, 31, 0.5);
+    height: 100%;
+}
+
 .active {
     border-bottom: 2px var(--sunglow) solid;
 }
@@ -228,7 +247,7 @@ nav {
   }
 }
 
-@media (width > 768px) {
+@media (width > 992px) {
     #toggle-nav {
         display: none;
     }
