@@ -1,7 +1,7 @@
 :root {
---french-mauve: hsla(299, 48%, 58%, 1);
---indigo: hsl(284.1, 100%, 60.8%);
---sunglow: rgb(204, 142, 8);
+--french-mauve: #c660c7;
+--indigo: #ca37ff;
+--sunglow: rgb(209, 186, 58);
 --honeydew: hsla(105, 67%, 96%, 1);
 --dark: rgb(31, 31, 31);
 }
@@ -38,8 +38,8 @@ a {
     justify-content: center;
 }
 
-.logo {
-    width: 70px;
+.svg1 {
+    width: 90px;
     object-fit: contain;
     aspect-ratio: 1/1;
     margin-left: .5rem;
@@ -53,7 +53,8 @@ nav {
     align-items: center;
     padding-block: 1.5rem;
     padding-inline: 1rem;
-    background-color: var(--french-mauve);
+    background-color: #242121;
+    z-index: 100;
 }
 
 .logo-wraper a {
@@ -117,7 +118,7 @@ nav {
 .nav-toggle-close i {
     color: hsl(0, 88.2%, 70%);
     font-size: 2.5rem;
-    padding-top: 1.5rem;
+    padding-top: 3.5rem;
     padding-inline: 2rem;
 }
 
@@ -125,13 +126,13 @@ nav {
     display: flex;
     flex-direction: column;
     gap: 2.5rem .5rem;
-    position: absolute;
+    position: fixed;
     top: 0;
-    left: 0;
+    right: 0;
     width: 100%;
-    height: 100vh;
-    overflow-x: hidden;
-    animation: slide-in 0.4s;
+    max-height: 100dvh;
+    overflow: hidden;
+    transition: all 0.3s ease; /* Optioneel voor soepele overgangen */
     background-color: var(--dark);
 }
 
@@ -149,8 +150,6 @@ nav {
 .services-dropdown {
     display: none;
     margin-top: .3rem;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
 }
 
 .services-links li a {
@@ -174,12 +173,8 @@ nav {
     padding-block: .1rem;
     padding-inline: .3rem;
     background-color: var(--indigo);
-    animation: slide-down 0.4s;
-    width: 100%;
-}
-
-#dropdown-services:checked ~ .services-dropdown {
     box-shadow: 2px 5px 8px rgba(7, 7, 7, 0.74);
+    animation: slide-down 0.3s forwards;
 }
 
 .nav-banner {
@@ -188,10 +183,6 @@ nav {
     width: 150px;
     padding-top: 2rem;
     margin: 0 auto;
-}
-
-#g88 {
-    fill: var(--french-mauve);
 }
 
 .social-nav-wrapper {
@@ -206,21 +197,64 @@ nav {
 
 .hero-section {
     width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
     margin: 0 auto;
     max-height: 40vh;
     text-align: center;
-    background-image: url(./assets/bannerpic.jpg);
+    background-image: url("./assets/bannerpic.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     aspect-ratio: 1 / 1;    
+
+    .hero-content {
+    padding: 2rem 1rem;
+    color: var(--honeydew);
+    background-color: rgb( 31, 31, 31, 0.7);
+    max-height: 40vh;
+    }
+
+    
+    .scedule-btn, .services-btn {
+        display: block;
+        width: fit-content;
+        margin: 1.5rem auto ;
+        padding: .8rem 1rem;
+        background-color: var(--french-mauve);
+        color: var(--honeydew);
+        font-weight: 600;
+        border-radius: 8px;
+        box-shadow: inset 5px 8px 7px var(--indigo);
+    }
+
+    .services-btn {
+        background-color: var(--sunglow);
+        box-shadow: 5px 8px 7px var(--dark);
+    }
+
 }
 
-.hero-content {
-    color: var(--honeydew);
-    padding-top: 2rem;
-    background-color: rgb( 31, 31, 31, 0.5);
-    height: 100%;
+main {
+    position: relative;
+}
+
+.intro-con {
+    position: absolute;
+    top: -15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem 1rem;
+
+    .homepage-image {
+        width: 100%;
+        object-fit: contain;
+        aspect-ratio: .5/.5;
+        max-width: 500px;
+        border-radius: 15px;
+    }   
 }
 
 .active {
@@ -233,17 +267,19 @@ nav {
   }
 
   to {
-    transform: translateX(0%);
+    transform: translateX(30%);
   }
 }
 
 @keyframes slide-down {
   from {
-    transform: translateY(100%);
+    opacity: 0;
+    transform: translateY(0%);
   }
 
   to {
-    transform: translateY(0%);
+    opacity: 1;
+     transform: translateY(10%);
   }
 }
 
@@ -274,7 +310,7 @@ nav {
         display: flex;
         flex-direction: row;
         justify-content: center;
-        width: 100%;
+
         padding-block: .5rem;
         padding-inline: .3rem;
     }
