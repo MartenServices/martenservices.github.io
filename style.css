@@ -205,19 +205,19 @@ nav {
     display: grid;
     grid-template-columns: 1fr;
     margin: 0 auto;
-    max-height: 40vh;
+    max-height: 50vh;
     text-align: center;
     background-image: url("./assets/bannerpic.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    aspect-ratio: 1 / 1;    
+    aspect-ratio: .5 / .5;    
 
     .hero-content {
     padding: 2rem 1rem;
     color: var(--honeydew);
     background-color: rgb( 31, 31, 31, 0.7);
-    max-height: 40vh;
+    max-height: 50vh;
     }
 
     .hero-content p {
