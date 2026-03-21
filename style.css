@@ -216,6 +216,7 @@ nav {
     aspect-ratio: 1 1;    
 
     .hero-content {
+        align-content: center;
         padding-inline: .8rem;
         padding-block: .8rem;
         font-size: clamp(1.3rem, 2vw, 1.9rem);
@@ -250,16 +251,10 @@ nav {
 
 }
 
-main {
-    position: relative;
-    margin: 0 auto;
-}
-
 .intro-con {
+    text-align: center;
     background-color: var(--dark);
     color: var(--honeydew);
-    position: absolute;
-    top: 0;
     display: flex;
     flex-direction: column;
     gap: .3rem;
@@ -272,15 +267,16 @@ main {
         aspect-ratio: .5/.5;
         max-width: 500px;
         border-radius: 15px;
+        margin: 0 auto;
     }   
 }
 
 .intro-con h2 {
-    font-size: clamp(1.7rem, 3vw, 2rem);
+    font-size: clamp(1.7rem, 3vw, 2.5rem);
     font-weight: 400;
-    text-decoration: underline;
+    padding-bottom: .2rem;
+    text-decoration: overline 2px;
     text-decoration-color: var(--sunglow);
-    text-decoration-thickness: 3px;
 }
 
 .intro-con span {
@@ -289,14 +285,9 @@ main {
     padding-bottom: .3rem;
 }
 
-.intro-con span .intro-name {
-    display: inline;
-    padding-inline: .1rem;
-}
-
 
 .intro-con a {
-    color: var(--french-mauve);
+    color: var(--indigo);
     font-weight: 600;
     text-decoration: underline;
     text-decoration-color: var(--french-mauve);
@@ -324,6 +315,18 @@ main {
   to {
     transform: translateY(100%);
   }
+}
+
+@media(width > 768px){
+    .intro-con {
+        flex-direction: row;
+        align-items: center;
+        padding-block: 2rem;
+
+        .homepage-image{
+            width: minmax(400px, 100%);
+        }
+    }
 }
 
 @media (width > 992px) {
@@ -373,6 +376,5 @@ main {
         text-decoration: underline 2px;
         text-decoration-color: var(--sunglow);
     }
-    
 }
 
