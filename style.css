@@ -321,10 +321,6 @@ nav {
         flex-direction: row;
         align-items: center;
         padding-block: 2rem;
-
-        .homepage-image{
-            width: minmax(400px, 100%);
-        }
     }
 }
 
