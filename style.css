@@ -328,6 +328,43 @@ nav {
     padding-block: 1rem;
 }
 
+footer {
+    display: grid;
+    grid-template-areas: 
+    "links "
+    "contact"
+    "location"
+    "rechten";
+}
+
+.footer-links {
+    grid-area: links;
+}
+
+.location {
+    grid-area: location;
+}
+
+.google-maps {
+    width: 100%;
+    height: 80%;
+    background-position: center;
+    aspect-ratio: 1 1;
+    object-fit: contain;
+    padding-inline: .8rem;
+    padding-block: 2rem;
+}
+
+.footer-contact {
+    grid-area: contact;
+}
+
+.rechten {
+    grid-area: rechten;
+    text-align: center;
+    padding-block: .5rem;
+}
+
 .active {
     border-bottom: 2px var(--sunglow) solid;
 }
