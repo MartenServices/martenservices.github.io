@@ -218,7 +218,6 @@ nav {
     .hero-content {
         align-content: center;
         padding-inline: .8rem;
-        padding-block: .8rem;
         font-size: clamp(1.3rem, 2vw, 1.9rem);
         color: var(--honeydew);
         background-color: rgb( 31, 31, 31, 0.7);
