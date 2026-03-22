@@ -424,7 +424,6 @@ footer {
 @media(width > 768px){
     .hero-content{
         height: 50dvh;
-        transition: all 1s;
     }
     .intro-con {
         flex-direction: row;
