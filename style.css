@@ -3,7 +3,7 @@
 --indigo: #ca37ff;
 --sunglow: rgb(209, 186, 58);
 --honeydew: hsla(105, 67%, 96%, 1);
---dark: rgb(31, 31, 31);
+--dark: #1f1f1f;
 }
 
 *,
@@ -252,13 +252,14 @@ nav {
 }
 
 .intro-con {
+    position: relative;
     text-align: center;
     background-color: var(--dark);
     color: var(--honeydew);
     display: flex;
     flex-direction: column;
     gap: 1.3rem;
-    padding-block: 2rem;
+    padding-top: 2rem;
     padding-inline: .8rem;
 
     .homepage-image {
@@ -268,6 +269,18 @@ nav {
         border-radius: 15px;
         margin: 0 auto;
     }   
+}
+
+#problems-con::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right:0;
+    width: 100vw;
+    height: 100%;
+    padding-top: 20px;
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100"><path d="M0 0v4c136 143.8 183.8-73.2 297 26.6 72.2 63.7 97 99 184.7 33.2a30.5 30.5 0 0 1 36.6 0c87.6 65.8 112.5 30.5 184.7-33.2C816.2-69.2 864 147.7 1000 4V0H0Z" fill="%231F1F1F"></path></svg>');
+    background-repeat: no-repeat;
 }
 
 .intro-content h2 {
@@ -291,6 +304,23 @@ nav {
     text-decoration: underline;
     text-decoration-color: var(--french-mauve);
    
+}
+
+#problems-con{
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    padding-top: 1rem;
+}
+
+#problems-con h2 {
+    text-align: center;
+    padding-top: 2rem;
+}
+
+.problems-span{
+    font-size: clamp(.9rem, 3vw, 1.3rem);
 }
 
 #services-con {
