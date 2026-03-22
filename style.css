@@ -423,9 +423,17 @@ nav {
 }
 
 #solution-con{
+    position: relative;
     display: grid;
     justify-items: center;
-    padding-block: 2rem;
+    padding-top: 4rem;
+    padding-bottom: 1rem;
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100"><path d="M0 0v100-79.4a1892 1892 0 0 1 500 0l500 66.7V0H0Z" fill="%231F1F1F"></path></svg>'),
+    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" transform="scale(-1, -1)" viewBox="0 0 1000 100"><path d="M0 0v100-79.4a1892 1892 0 0 1 500 0l500 66.7V0H0Z" fill="%231F1F1F"></path></svg>'),
+    linear-gradient(var(--indigo), var(--sunglow))
+    ;
+    background-repeat: no-repeat;
+    background-position: top, bottom, center;
 }
 
 .solutions {
@@ -437,6 +445,8 @@ nav {
 }
 
 footer {
+    background-color: var(--dark);
+    color: var(--honeydew);
     display: grid;
     grid-template-areas: 
     "links "
@@ -518,6 +528,10 @@ footer {
     }
     #problems-con h2 {
         padding-top: 6rem;
+    }
+
+    #solution-con{
+        padding-bottom: 4rem;
     }
 }
 
