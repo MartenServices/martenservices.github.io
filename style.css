@@ -270,7 +270,7 @@ nav {
     }   
 }
 
-.intro-con h2 {
+.intro-content h2 {
     font-size: clamp(1.7rem, 3vw, 2.5rem);
     font-weight: 400;
     padding-bottom: .2rem;
@@ -278,9 +278,9 @@ nav {
     text-decoration-color: var(--sunglow);
 }
 
-.intro-con span {
+.intro-content span {
     font-size: clamp(1rem, 3vw, 1.5rem);
-    font-weight: 400;
+    font-weight: 300;
     padding-bottom: .3rem;
 }
 
@@ -292,9 +292,45 @@ nav {
     text-decoration-color: var(--french-mauve);
    
 }
+
+#services-con {
+    display: grid;
+    justify-items: center;
+}
+
+.services-card {
+    width: 250px;
+    display: inherit;
+    justify-items: center;
+    text-align: center;
+    gap: .5rem;
+    padding: 1rem;
+}
+
+.card-image {
+    font-size: 3rem;
+}
+
+#solution-con{
+    display: grid;
+    justify-items: center;
+    padding-block: 2rem;
+}
+
+.solutions {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap:.8rem;
+    padding-inline: .3rem;
+    justify-items: center;
+    padding-block: 2rem;
+}
+
 .active {
     border-bottom: 2px var(--sunglow) solid;
 }
+
+
 
 @keyframes slide-in {
   from {
@@ -317,6 +353,9 @@ nav {
 }
 
 @media(width > 768px){
+    .hero-content{
+        height: 40dvh;
+    }
     .intro-con {
         flex-direction: row;
         align-items: center;
