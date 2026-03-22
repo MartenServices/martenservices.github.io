@@ -320,9 +320,9 @@ nav {
 .solutions {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap:.8rem;
+    gap:.3rem;
     padding-inline: .3rem;
-    justify-items: center;
+    align-items: center;
     padding-block: 2rem;
 }
 
@@ -354,7 +354,8 @@ nav {
 
 @media(width > 768px){
     .hero-content{
-        height: 40dvh;
+        height: 50dvh;
+        transition: all 1s;
     }
     .intro-con {
         flex-direction: row;
