@@ -529,6 +529,7 @@ footer {
     padding-right: .8rem;
     padding-bottom: .8rem;
     letter-spacing: 0.015rem;
+        font-size: clamp(.8rem, 2vw, 1rem);
 }
 
 .contact-link{
