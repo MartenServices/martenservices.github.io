@@ -296,6 +296,7 @@ nav {
 #services-con {
     display: grid;
     justify-items: center;
+    padding-top: 1rem;
 }
 
 .services-card {
@@ -322,8 +323,7 @@ nav {
     grid-template-columns: repeat(3, 1fr);
     gap:.3rem;
     padding-inline: .3rem;
-    align-items: center;
-    padding-block: 2rem;
+    padding-block: 1rem;
 }
 
 .active {
