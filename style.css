@@ -484,18 +484,31 @@ footer {
     color: var(--honeydew);
     display: grid;
     grid-template-areas: 
-    "links "
-    "contact"
-    "location"
-    "rechten";
+    "links contact"
+    "links contact"
+    " location location"
+    "rechten rechten";
+    justify-items: bottom;
+    padding-bottom: .3rem;
+    gap: .3rem;
 }
 
 .footer-links {
     grid-area: links;
+    padding-left: .8rem;
+    padding-bottom: .8rem;
 }
+
+.footer-links ul li {
+    list-style-type: none;
+    padding-bottom: .3rem;
+}
+
 
 .location {
     grid-area: location;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--indigo);
 }
 
 .google-maps {
@@ -505,18 +518,54 @@ footer {
     aspect-ratio: 1 1;
     object-fit: contain;
     padding-inline: .8rem;
-    padding-block: 2rem;
 }
 
 .footer-contact {
     grid-area: contact;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-right: .8rem;
+    padding-bottom: .8rem;
+    letter-spacing: 0.025rem;
 }
+
+.contact-link{
+    display: block;
+    text-decoration: underline 1px solid var(--indigo);
+}
+
+.fa-whatsapp {
+    color: rgb(5, 255, 5);
+}
+
+.fa-linkedin {
+    color: rgb(0, 153, 255);
+}
+
+.fa-instagram {
+    background-image: linear-gradient(45deg, var(--indigo), var(--sunglow));
+    border-radius: 5px;
+}
+
 
 .rechten {
     grid-area: rechten;
     text-align: center;
-    padding-block: .5rem;
+    padding-top: .3rem;
+    font-size: .8rem;
 }
+
+.adress span {
+    display: block;
+    padding-bottom: .3rem;
+    padding-left: .8rem;
+}
+
+.adress span:last-child{
+    margin-bottom: .8rem;
+} 
 
 .active {
     border-bottom: 2px var(--sunglow) solid;
