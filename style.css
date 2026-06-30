@@ -213,7 +213,7 @@ nav {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    aspect-ratio: 1 1;    
+    aspect-ratio: 1 / 1;    
 
     .hero-content {
         align-content: center;
@@ -295,13 +295,10 @@ nav {
     }   
 
 
-#problems-con{
-    position: relative;
+#service-con{
     display: grid;
     gap: 1rem;
-    padding-top: 2rem;
-    padding-bottom: 5rem;
-    padding-inline: .8rem;
+    padding-block: 5rem;
     background-image: 
     url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100"><path d="M500 4c-125 0-125 96-250 96S125 4 0 4V0h1000v4c-125 0-125 96-250 96S625 4 500 4Z" fill="%231F1F1F"></path></svg>'),
     url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" transform="scale(1, -1)" viewBox="0 0 1000 100"><path d="M500 4c-125 0-125 96-250 96S125 4 0 4V0h1000v4c-125 0-125 96-250 96S625 4 500 4Z" fill="%231F1F1F"></path></svg>'),
@@ -311,16 +308,20 @@ nav {
     justify-items: center;
 }
 
+#problems-con{
+    background-color: var(--dark);
+    color: var(--honeydew);
+    text-align: center;
+    padding-inline: .8rem;
+}
 
 #problems-con h2 {
     font-size: clamp(1.7rem, 4vw, 3.5rem);
-    text-align: center;
-    padding-top: 3rem;
+    padding-block: 1.5rem;
 }
 
 #problems-con ul {
-    background-color: var(--dark);
-    padding: 1rem 2rem;
+    padding: 1rem;
     border: #ca37ff 1px solid;
     border-radius: 5px;
     box-shadow: 2px 3px 8px rgba(7, 7, 7, 0.74);
@@ -329,27 +330,26 @@ nav {
 #problems-con ul li {
     font-size: clamp(1.1rem, 3vw, 1.6rem);
     font-style: italic;
-    letter-spacing: .02rem;
+    letter-spacing: .03rem;
     list-style-type: none;
     padding-bottom: .8rem;
     color: var(--honeydew);
 }
 
 #problems-con p {
+    padding-block: 1.5rem;
     font-style: italic;
     text-align: center;
     font-size: clamp(1.3rem, 3vw, 1.7rem);
     font-weight: 600;
-    padding-bottom: .8rem;
-    text-decoration: underline 2px;
+    text-decoration: underline 1px;
     text-decoration-color: var(--sunglow);
-    text-decoration-skip-ink: none;
 }
 
 .problem-icon {
-    color: #ff2d2d;
     font-size: 1.5rem;
     margin-right: .5rem;
+    display: inline-block;
 }
 
 .problems-span{
@@ -357,21 +357,101 @@ nav {
 }
 
 
+#serviceCarousel {
+  width: 100vw;
+  padding: 30px;
+  display: flex;
+  gap: 3vw;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  anchor-name: --my-carousel;
+  scroll-marker-group: after;
+}
+
+#serviceCarousel li {
+  list-style-type: none;
+  color: var(--honeydew);
+  background-color: var(--dark);
+  border-radius: 10px;
+  padding: 20px;
+  
+  /* Flex item breedte fallbacks */
+  -webkit-box-flex: 0;
+  flex: 0 0 100%;
+  
+  /* Scroll Snap Alignment */
+  scroll-snap-align: center;
+}
+
+/* --- PROGRESSIVE ENHANCEMENT VOOR NIEUWE CAROUSEL PSEUDO-ELEMENTEN --- */
+
+#serviceCarousel::scroll-button(*) {
+  border: 0;
+  font-size: 2rem;
+  background: none;
+  color: rgb(236, 234, 234);
+  opacity: 0.7;
+  cursor: pointer;
+  position: absolute;
+  position-anchor: --my-carousel;
+}
+
+#serviceCarousel::scroll-button(*):hover,
+#serviceCarousel::scroll-button(*):focus {
+  opacity: 1;
+}
+
+#serviceCarousel::scroll-button(*):active {
+  transform: translate(1px, 1px);
+}
+
+#serviceCarousel::scroll-button(*):disabled {
+  opacity: 0.2;
+  cursor: unset;
+}
+
+
+#serviceCarousel::scroll-marker-group {
+  position: absolute;
+  position-anchor: --my-carousel;
+  top: calc(anchor(bottom) - 50px);
+  justify-self: anchor-center;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+#serviceCarousel li::scroll-marker {
+  content: attr(data-accName);
+  width: 10px;
+  height: 10px;
+  background-color: transparent;
+  border: 2px solid var(--indigo);
+  border-radius: 50%;
+  overflow: hidden;
+  text-indent: 16px;
+}
+
+#serviceCarousel li::scroll-marker:target-current {
+  background-color: var(--french-mauve);
+}
 
 #services-con {
     position: relative;
     display: grid;
     justify-items: center;
     gap: 1rem;
-    padding-top: 1rem;
-    padding-bottom: 2rem;
+    padding-block: 2rem;
     background-color: var(--dark);
+    color:var(--honeydew);
 }
 
-#services-con h3 {
-    font-size: clamp(2rem, 4vw, 3.5rem);
+#services-con h2 {
+    font-size: clamp(1.6rem, 2vw, 2.5rem);
     text-align: center;
-    padding-top: 1rem;
     color: var(--honeydew);
 }
 
@@ -380,8 +460,6 @@ nav {
     padding: .6rem .5rem;
     font-size: .8rem;
     text-align: center;
-    border-radius: 15px;
-    border: var(--indigo) 2px solid;
     color: var(--honeydew);
 }
 
@@ -413,14 +491,13 @@ nav {
 }
 
 .services-link-big {
-    display: inline-block;
     padding: .6rem .5rem;
     background-color: var(--sunglow);
     color: var(--dark);
     font-size: clamp(1.3rem, 2vw, 1.5rem);
     font-weight: 600;
     border-radius: 8px;
-    box-shadow: 2px 2px 5px var(--indigo);
+    box-shadow: 2px 1px 3px var(--indigo);
 }
 
 #solution-con{
