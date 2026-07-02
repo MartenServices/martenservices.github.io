@@ -321,6 +321,8 @@ nav {
 }
 
 #problems-con ul {
+    width: 50vw;
+    margin: 0 auto;
     padding: 1rem;
     border-radius: 5px;
     box-shadow: 2px 3px 20px var(--indigo);
