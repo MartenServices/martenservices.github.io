@@ -4,6 +4,8 @@
 --sunglow: rgb(209, 186, 58);
 --honeydew: hsla(105, 67%, 96%, 1);
 --dark: #1f1f1f;
+
+font-family: "Poppins", sans-serif;
 }
 
 *,
@@ -144,8 +146,8 @@ nav {
     height: 100dvh;
     overflow: hidden;
     overflow-y: scroll;
-    animation: slide-in  0.3s forwards;
-    transition: all 1s; /* Optioneel voor soepele overgangen */
+    animation: slide-in  .8s forwards;
+    transition: all 2s; /* Optioneel voor soepele overgangen */
     background-color: var(--dark);
 }
 
@@ -164,6 +166,7 @@ nav {
 .services-dropdown {
     display: none;
     margin-top: .3rem;
+    width: 100%;
 }
 
 .services-links li a {
@@ -183,9 +186,8 @@ nav {
     display: flex;
     padding-block: .5rem;
     padding-inline: .7rem;
-    box-shadow: 2px 3px 8px rgba(7, 7, 7, 0.74);
-    animation: slide-down 0.3s ease-in;
-    transition: all 1s;
+    animation: slide-down 0.4s ease-in;
+    transition: all .6s;
 }
 
 .nav-banner {
@@ -261,11 +263,9 @@ nav {
 }
 
 .intro-content h2 {
-    font-size: clamp(2rem, 3vw, 2.5rem);
+    font-size: clamp(3rem, 11vw, 3.5rem);
     font-weight: 400;
-    padding-bottom: 1.2rem;
-    text-decoration: overline 2px;
-    text-decoration-color: var(--sunglow);
+    padding-block: 1.2rem;
     text-emphasis: dot var(--indigo);
 }
 
@@ -277,6 +277,7 @@ nav {
 
 
 .intro-con a {
+    display: block;
     color: var(--sunglow);
     font-weight: 600;
     text-decoration: underline;
@@ -305,6 +306,12 @@ nav {
     background-repeat: no-repeat;
     background-position: top, bottom, center;
     justify-items: center;
+
+    h2{
+        font-size: clamp(1.7rem, 10vw, 3.5rem);
+        padding-block-start: 3.5rem;
+        text-align: center;
+    }
 }
 
 #problems-con{
@@ -313,45 +320,41 @@ nav {
     text-align: center;
     padding-inline: .8rem;
     padding-block: 5rem;
-}
 
-#problems-con h2 {
-    font-size: clamp(1.7rem, 4vw, 3.5rem);
-    padding-block: 3.5rem;
-}
+    h2{
+        font-size: clamp(1.7rem, 11vw, 3.5rem);
+        padding-block-end: 3.5rem;
+    }
 
-#problems-con ul {
-    width: 50vw;
+    h3 {
+        font-size: clamp(1.5rem, 3vw, 2.5rem);
+        padding-block: 1.5rem;
+        color: var(--sunglow);
+    }
+
+    ul {
+    width: 60vw;
     margin: 0 auto;
     padding: 1rem;
     border-radius: 5px;
     box-shadow: 2px 3px 20px var(--indigo);
+
+        li {
+            font-size: clamp(1rem, 3vw, 1.6rem);
+            font-style: italic;
+            letter-spacing: .03rem;
+            list-style-type: none;
+            padding-block: 1.3rem;
+            color: var(--honeydew);
+
+            .problem-icon {
+                font-size: 2rem;
+                display: inline-block;
+            }
+        }
+    }
 }
 
-#problems-con ul li {
-    font-size: clamp(1.1rem, 3vw, 1.6rem);
-    font-style: italic;
-    letter-spacing: .03rem;
-    list-style-type: none;
-    padding-block: 1.3rem;
-    color: var(--honeydew);
-}
-
-#problems-con p {
-    padding-block: 3.5rem;
-    font-style: italic;
-    text-align: center;
-    font-size: clamp(1.3rem, 3vw, 1.7rem);
-    font-weight: 600;
-    text-decoration: underline 1px;
-    text-decoration-color: var(--indigo);
-}
-
-.problem-icon {
-    font-size: 1.5rem;
-    margin-right: .5rem;
-    display: inline-block;
-}
 
 .problems-span{
     font-size: clamp(.9rem, 3vw, 1.3rem);
@@ -367,7 +370,6 @@ nav {
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   anchor-name: --my-carousel;
-  scroll-marker-group: after;
 }
 
 #serviceCarousel li {
@@ -441,10 +443,6 @@ nav {
 }
 
 #services-con {
-    position: relative;
-    display: grid;
-    justify-items: center;
-    gap: 1rem;
     padding-block: 2rem;
     background-color: var(--dark);
     color:var(--honeydew);
@@ -501,46 +499,34 @@ nav {
     box-shadow: 2px 1px 3px var(--indigo);
 }
 
-#solution-con{
-    position: relative;
-    display: grid;
-    justify-items: center;
-    padding-inline: .8rem;
-    padding-top: 4rem;
-    padding-bottom: 1rem;
-    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100"><path d="M0 0v100-79.4a1892 1892 0 0 1 500 0l500 66.7V0H0Z" fill="%231F1F1F"></path></svg>'),
-    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" transform="scale(-1, -1)" viewBox="0 0 1000 100"><path d="M0 0v100-79.4a1892 1892 0 0 1 500 0l500 66.7V0H0Z" fill="%231F1F1F"></path></svg>'),
-    linear-gradient(-200deg,var(--indigo), var(--sunglow));
-    background-repeat: no-repeat;
-    background-position: top, bottom, center;
-}
-
-#solution-con h2 {
-    font-size: clamp(1.7rem, 4vw, 3.5rem);
-    text-align: center;
-    padding-bottom: .8rem;
-    color: var(--dark);
-}
 
 .solutions {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap:.1rem;
-    padding-bottom: 3rem;
+    display:flex; 
+    flex-wrap: wrap;    
+    justify-content: center;
+    gap: 1.5rem;
 }
 
 .solution-card {
-    display: grid;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-color: var(--dark);
-    color: var(--sunglow);
-    padding: .4rem;
+    padding: .6rem;
     border-radius: 10px;
-    border: 1px var(--indigo) solid;
-    box-shadow: 1px 1px 3px var(--dark)
+    border: 2px var(--indigo) solid;
+    box-shadow: 1px 1px 3px var(--indigo);
+
+    h4{
+        font-size: clamp(1rem, 3vw, 1.4rem);
+        color: var(--sunglow);  
+        padding-bottom: .3rem;  
+    }
 }
 
 .solution-icon{
-    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    font-size: clamp(1.1rem, 10vw, 3rem);
     background-image: linear-gradient(var(--sunglow), var(--indigo));
     background-clip: text;
     -webkit-background-clip: text;
@@ -550,11 +536,80 @@ nav {
 
 
 .solution-card p {
-    font-size: clamp(.7rem, 2vw, 1.3rem);
+    font-size: clamp(.8rem, 3vw, 1.3rem);
     letter-spacing: 0.025rem;
     color: var(--honeydew);
     padding-top: .3rem;
   
+}
+
+#service-bundle-con {
+    background-image: 
+    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100"><path d="M0 0v4c136 143.8 183.8-73.2 297 26.6 72.2 63.7 97 99 184.7 33.2a30.5 30.5 0 0 1 36.6 0c87.6 65.8 112.5 30.5 184.7-33.2C816.2-69.2 864 147.7 1000 4V0H0Z" fill="%231F1F1F"></path></svg>'),
+    linear-gradient(-135deg,var(--sunglow)30%, var(--indigo));
+    background-repeat: no-repeat;
+    background-position: top;
+    padding-block: 3.5rem;
+    padding-inline: .8rem;
+
+    h2 {
+        padding-block-start: 3.5rem;
+        font-size: clamp(1rem, 9vw, 4.5rem);
+        text-align: right;
+    }
+
+    .bundles-con{
+        display: flex;
+        flex-direction: column; 
+        padding-block-start: .8rem;
+        padding-inline: .8rem;
+
+        .bundle-card{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: var(--dark);
+            padding-block: 1rem;
+            padding-inline: 1.2rem;
+            border-radius: 10px;
+            box-shadow: 3px 4px 8px var(--french-mauve);
+            color: var(--sunglow); 
+
+            h4{
+                font-size: 2rem;
+                background-image: linear-gradient(90deg, var(--indigo)5%, var(--sunglow));
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent; 
+                color: transparent;
+                i {
+                    font-size: 2.5rem;
+                }
+            }
+
+            h6 {
+                font-size: clamp(1rem, 2vw, 1.5rem);
+                padding-block: .3rem;
+            }
+
+            p{
+                font-size: clamp(.9rem, 2vw, 1.3rem);
+                padding-block-start: .1rem;
+                padding-block-end: .3rem;
+                color: var(--honeydew);
+            }
+
+            ul {
+                font-size: clamp(.9rem, 3vw, 1rem);
+                padding-block-end: 1rem;
+
+                li {
+                    padding-block-end: .3rem;
+                    color: var(--honeydew);
+                }
+            }
+        }
+    }
 }
 
 footer {
@@ -562,12 +617,12 @@ footer {
     color: var(--honeydew);
     display: grid;
     grid-template-areas: 
-    "links contact"
-    "links contact"
-    " location location"
-    "rechten rechten";
-    justify-items: bottom;
+    "links links contact"
+    "links links contact"
+    " location location location"
+    "rechten rechten rechten";
     padding-bottom: .3rem;
+    padding-block-start: .3rem;
     gap: .3rem;
 }
 
@@ -584,35 +639,45 @@ footer {
 
 
 .location {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     grid-area: location;
-    padding-bottom: 2rem;
     border-bottom: 1px solid var(--indigo);
 }
 
 .google-maps {
     width: 100%;
-    height: 80%;
+    height: 50%;
     background-position: center;
-    aspect-ratio: 1 1;
+    aspect-ratio: 1 / 1;
     object-fit: contain;
     padding-inline: .8rem;
 }
 
 .footer-contact {
     grid-area: contact;
-    text-align: right;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    padding-right: .8rem;
     padding-bottom: .8rem;
+    padding-left: .8rem;
     letter-spacing: 0.015rem;
-        font-size: clamp(.8rem, 2vw, 1rem);
+    font-size: clamp(.9rem, 2vw, 1.1rem);
+    border-left: 1px solid var(--sunglow);
+
+    h4 {
+        text-align:left;
+        padding-block: .3rem;
+    }
 }
 
 .contact-link{
     display: block;
-    text-decoration: underline 1px solid var(--indigo);
+    padding-block: .1rem;
+
+    i {
+	    padding-inline-end: .3rem;
+    }
 }
 
 /* .fa-whatsapp {
@@ -630,7 +695,6 @@ footer {
 
 
 .fa-brands {
-    padding-inline: .5rem;
     font-size: clamp(1.2rem, 2vw, 1.5rem);
 }
 
@@ -644,7 +708,7 @@ footer {
 
 .adress span {
     display: block;
-    padding-bottom: .3rem;
+    padding-bottom: .6rem;
     padding-left: .8rem;
 }
 
@@ -670,11 +734,11 @@ footer {
 
 @keyframes slide-down {
   from {
-    transform: translateY(0%);
+    opacity: 0;
   }
 
   to {
-    transform: translateY(100%);
+    opacity: 1;
   }
 }
 
