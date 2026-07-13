@@ -2,7 +2,7 @@
 --french-mauve: #c660c7;
 --indigo: #ca37ff;
 --sunglow: rgb(209, 186, 58);
---honeydew: hsla(105, 67%, 96%, 1);
+--honeydew: #f1fcee;
 --dark: #1f1f1f;
 
 font-family: "Poppins", sans-serif;
@@ -372,6 +372,10 @@ nav {
 }
 
 #serviceCarousel li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   list-style-type: none;
   color: var(--honeydew);
   background-color: var(--dark);
@@ -548,15 +552,15 @@ nav {
     gap: 1.5rem;
     background-image: 
     url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100"><path d="M0 0v4c136 143.8 183.8-73.2 297 26.6 72.2 63.7 97 99 184.7 33.2a30.5 30.5 0 0 1 36.6 0c87.6 65.8 112.5 30.5 184.7-33.2C816.2-69.2 864 147.7 1000 4V0H0Z" fill="%231F1F1F"></path></svg>'),
-    linear-gradient(-135deg,var(--sunglow)30%, var(--indigo));
+    linear-gradient(165deg,var(--sunglow)30%, var(--indigo));
     background-repeat: no-repeat;
     background-position: top;
     padding-block: 3.5rem;
-    padding-inline: .8rem;
     width: 100%;
 
     h2 {
         padding-block-start: 3.5rem;
+        padding-inline: .8rem;
         font-size: clamp(1rem, 9vw, 4.5rem);
         text-align: right;
     }
@@ -650,7 +654,7 @@ nav {
         color: var(--sunglow); 
 
         h4{
-            font-size: 2rem;
+            font-size: clamp(1.3rem, 3vw, 1.7rem);
             background-image: linear-gradient(90deg, var(--indigo)5%, var(--sunglow));
             background-clip: text;
             -webkit-background-clip: text;
@@ -698,6 +702,28 @@ nav {
     }
 }
 
+.cmp-quote {
+    text-align: center;
+    border-top: 2px solid var(--honeydew);
+    background-color: var(--dark);
+    /* background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 800 800'%3E%3Cg fill='none' stroke='%23F1FCEE' stroke-width='1'%3E%3Cpath d='M769 229L1037 260.9M927 880L731 737 520 660 309 538 40 599 295 764 126.5 879.5 40 599-197 493 102 382-31 229 126.5 79.5-69-63'/%3E%3Cpath d='M-31 229L237 261 390 382 603 493 308.5 537.5 101.5 381.5M370 905L295 764'/%3E%3Cpath d='M520 660L578 842 731 737 840 599 603 493 520 660 295 764 309 538 390 382 539 269 769 229 577.5 41.5 370 105 295 -36 126.5 79.5 237 261 102 382 40 599 -69 737 127 880'/%3E%3Cpath d='M520-140L578.5 42.5 731-63M603 493L539 269 237 261 370 105M902 382L539 269M390 382L102 382'/%3E%3Cpath d='M-222 42L126.5 79.5 370 105 539 269 577.5 41.5 927 80 769 229 902 382 603 493 731 737M295-36L577.5 41.5M578 842L295 764M40-201L127 80M102 382L-261 269'/%3E%3C/g%3E%3Cg fill='%23F1FCEE'%3E%3Ccircle cx='769' cy='229' r='5'/%3E%3Ccircle cx='539' cy='269' r='5'/%3E%3Ccircle cx='603' cy='493' r='5'/%3E%3Ccircle cx='731' cy='737' r='5'/%3E%3Ccircle cx='520' cy='660' r='5'/%3E%3Ccircle cx='309' cy='538' r='5'/%3E%3Ccircle cx='295' cy='764' r='5'/%3E%3Ccircle cx='40' cy='599' r='5'/%3E%3Ccircle cx='102' cy='382' r='5'/%3E%3Ccircle cx='127' cy='80' r='5'/%3E%3Ccircle cx='370' cy='105' r='5'/%3E%3Ccircle cx='578' cy='42' r='5'/%3E%3Ccircle cx='237' cy='261' r='5'/%3E%3Ccircle cx='390' cy='382' r='5'/%3E%3C/g%3E%3C/svg%3E"); */
+    padding: 1.8rem;
+    color: var(--honeydew);
+    letter-spacing: .03rem;
+    font-weight: 600;
+
+    h6 {
+        font-size: clamp(1.5rem, 5vw, 2rem);
+        padding-block-end: .3rem;
+        text-decoration:overline;
+    }
+
+    p {
+        font-style: italic;
+        font-size: clamp(.9rem, 5vw, 1.1rem);
+    }
+}
+
 footer {
     background-color: var(--dark);
     color: var(--honeydew);
@@ -706,8 +732,8 @@ footer {
     "links links contact"
     "location location location"
     "rechten rechten rechten";
-    padding-bottom: .3rem;
-    padding-block-start: .3rem;
+    padding-block-end: .3rem;
+    padding-block-start: .8rem;
     gap: .3rem;
 }
 
@@ -728,14 +754,16 @@ footer {
     grid-template-columns: repeat(2, 1fr);
     grid-area: location;
     border-bottom: 1px solid var(--indigo);
+    justify-items: center;
+    align-items: center;
 }
 
 .google-maps {
     width: 100%;
-    height: 50%;
+    height: 80%;
     background-position: center;
     aspect-ratio: 1 / 1;
-    object-fit: contain;
+    object-fit: cover;
     padding-inline: .8rem;
 }
 
@@ -771,12 +799,13 @@ footer {
 }
 
 
-.rechten {
+.rechten{
     grid-area: rechten;
     text-align: center;
     padding-top: .3rem;
     font-size: .8rem;
 }
+
 
 .adress span {
     display: block;
