@@ -560,59 +560,130 @@ nav {
         text-align: right;
     }
 
-    .bundles-con{
+    #bundleCarousel {
+        width: 100vw;
+        padding: 30px;
         display: flex;
-        flex-direction: column; 
-        gap: .4rem;
-        padding-block-start: .8rem;
-        padding-inline: .8rem;
+        gap: 3vw;
+        overflow-x: scroll;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        anchor-name: --my-bundle-carousel;
 
-        .bundle-card{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            background-color: var(--dark);
-            padding-block: 1rem;
-            padding-inline: 1.2rem;
-            border-radius: 10px;
-            box-shadow: 3px 4px 8px var(--french-mauve);
-            color: var(--sunglow); 
+        .li-bundle {
+            list-style-type: none;
+            
+            /* Flex item breedte fallbacks */
+            -webkit-box-flex: 0;
+            flex: 0 0 100%;
+            
+            /* Scroll Snap Alignment */
+            scroll-snap-align: center;
+        }
+        
+    }
 
-            h4{
-                font-size: 2rem;
-                background-image: linear-gradient(90deg, var(--indigo)5%, var(--sunglow));
-                background-clip: text;
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent; 
-                color: transparent;
-                i {
-                    font-size: 2.5rem;
-                }
+    #bundleCarousel::scroll-button(*) {
+    border: 0;
+    font-size: 2rem;
+    background: none;
+    color: rgb(236, 234, 234);
+    opacity: 0.7;
+    cursor: pointer;
+    position: absolute;
+    position-anchor: --my-carousel;
+    }
+
+    #bundleCarousel::scroll-button(*):hover,
+    #bundleCarousel::scroll-button(*):focus {
+    opacity: 1;
+    }
+
+    #bundleCarousel::scroll-button(*):active {
+    transform: translate(1px, 1px);
+    }
+
+    #bundleCarousel::scroll-button(*):disabled {
+    opacity: 0.2;
+    cursor: unset;
+    }
+
+
+    #bundleCarousel::scroll-marker-group {
+    position: absolute;
+    position-anchor: --my-bundle-carousel;
+    top: calc(anchor(bottom) - 50px);
+    justify-self: anchor-center;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    gap: 20px;
+    }
+
+    #bundleCarousel li::scroll-marker {
+    content: attr(data-accName);
+    width: 10px;
+    height: 10px;
+    background-color: transparent;
+    border: 2px solid var(--indigo);
+    border-radius: 50%;
+    overflow: hidden;
+    text-indent: 16px;
+    }
+
+    #bundleCarousel li::scroll-marker:target-current {
+    background-color: var(--french-mauve);
+    }
+
+
+    .bundle-card{
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        align-items: center;
+        background-color: var(--dark);
+        padding-block: 1rem;
+        padding-inline: 1.2rem;
+        border-radius: 10px;
+        box-shadow: 3px 4px 8px var(--french-mauve);
+        color: var(--sunglow); 
+
+        h4{
+            font-size: 2rem;
+            background-image: linear-gradient(90deg, var(--indigo)5%, var(--sunglow));
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent; 
+            color: transparent;
+            i {
+                font-size: 2.5rem;
             }
+        }
 
-            h6 {
-                font-size: clamp(1rem, 2vw, 1.5rem);
-                padding-block: .3rem;
-            }
+        h6 {
+            font-size: clamp(1rem, 2vw, 1.5rem);
+            padding-block: .3rem;
+        }
 
-            p{
-                font-size: clamp(.9rem, 2vw, 1.3rem);
-                padding-block-start: .1rem;
+        p{
+            font-size: clamp(.9rem, 2vw, 1.3rem);
+            padding-block-start: .1rem;
+            padding-block-end: .3rem;
+            color: var(--honeydew);
+        }
+
+        .bundle-list {
+            font-size: clamp(.9rem, 3vw, 1rem);
+            padding-block-end: 1rem;
+
+            li {
                 padding-block-end: .3rem;
                 color: var(--honeydew);
             }
-
-            ul {
-                font-size: clamp(.9rem, 3vw, 1rem);
-                padding-block-end: 1rem;
-
-                li {
-                    padding-block-end: .3rem;
-                    color: var(--honeydew);
-                }
-            }
         }
     }
+
 
     .bundles-link {
         width: fit-content;
