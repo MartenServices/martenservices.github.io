@@ -553,6 +553,7 @@ nav {
     background-position: top;
     padding-block: 3.5rem;
     padding-inline: .8rem;
+    width: 100%;
 
     h2 {
         padding-block-start: 3.5rem;
@@ -561,7 +562,6 @@ nav {
     }
 
     #bundleCarousel {
-        width: 100vw;
         padding: 30px;
         display: flex;
         gap: 3vw;
