@@ -219,7 +219,7 @@ nav {
         padding-inline: .8rem;
         font-size: clamp(1.3rem, 2vw, 1.9rem);
         color: var(--honeydew);
-        background-color: rgb( 31, 31, 31, 0.7);
+                    background-image: linear-gradient(180deg, rgba(31, 31, 31, 0.4)1%, var(--dark));
     }
 
     .hero-content p {
